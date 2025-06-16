@@ -16,9 +16,8 @@ Automatizar casos de teste utilizando Robot Framework, aplicando boas práticas 
 ## Organização
 
 - `main` → versão estável
-- `branch_cassia` → implementação Cássia
-- `branch_douglas` → implementação Douglas
-- `branch_eduarda` → implementação Eduarda
+- `develop` → integração para novas features
+- `feature` → desenvolvimento de novas funcionalidades
 
 ## Estrutura
 (vamos colocar após pronto)
