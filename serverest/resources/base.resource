@@ -1,5 +1,8 @@
 *** Settings ***
 Resource   env.resource
+Resource   ../resources/pages/components/Header.resource
+
+Resource   pages/SignupPage.resource
 
 Library    Browser
 
