@@ -3,19 +3,27 @@ Documentation        Cenários de testes do cadastro de usuários
 Library              FakerLibrary
 
 Resource             ../../resources/base.resource
-Resource             ../../resources/pages/SignupPage.resource
 
 Test Setup           Start Session
 Test Teardown        Take Screenshot
 
 *** Test Cases ***
-Should signup a new user
+Should signup a new administrator
     &{user}        Create Dictionary    
-    ...            nome=FakerLibrary
+    ...            nome=Cassia Yumi
     ...            email=ci@gmail.com
     ...            password=pwe123
     
-    ${id}    Set Test Variable    ${id}
     Go to signup Page
     Submit signup form as administrator    &{user}
+    Administrator should be logged in      ${user}[nome]
+
+Should signup a new user
+    &{user}        Create Dictionary    
+    ...            nome=Jean
+    ...            email=js@gmail.com
+    ...            password=pdw123
+    
+    Go to signup Page
+    Submit signup form as user    &{user}
     Administrator should be logged in      ${user}[nome]

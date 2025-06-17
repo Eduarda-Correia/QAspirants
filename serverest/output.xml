@@ -1,60 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-16T16:56:32.577966" rpa="false" schemaversion="5">
-<suite id="s1" name="Signup" source="C:\Users\cassi\OneDrive\Área de Trabalho\QAspirants\serverest\tests\signup.robot">
-<test id="s1-t1" name="Should signup a new user" line="12">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-06-17T13:36:53.124648" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\cassi\OneDrive\Área de Trabalho\QAspirants\serverest\tests">
+<suite id="s1-s1" name="Users" source="C:\Users\cassi\OneDrive\Área de Trabalho\QAspirants\serverest\tests\users">
+<suite id="s1-s1-s1" name="Signup" source="C:\Users\cassi\OneDrive\Área de Trabalho\QAspirants\serverest\tests\users\signup.robot">
+<test id="s1-s1-s1-t1" name="Should signup a new user" line="12">
 <kw name="Start Session" owner="base" type="SETUP">
 <kw name="New Browser" owner="Browser">
-<msg time="2025-06-16T16:56:33.353879" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\cassi\\OneDrive\\\u00c1rea de Trabalho\\QAspirants\\serverest\\browser\\traces\\temp\\ac2ab98e-a0ae-4082-b1d1-1fc9a091a548"}</msg>
-<msg time="2025-06-16T16:56:33.393938" level="INFO">Starting Browser process C:\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:56181</msg>
-<msg time="2025-06-16T16:56:34.725813" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\cassi\\OneDrive\\Área de Trabalho\\QAspirants\\serverest\\browser\\traces\\temp\\ac2ab98e-a0ae-4082-b1d1-1fc9a091a548"}</msg>
+<msg time="2025-06-17T13:36:53.737199" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\cassi\\OneDrive\\\u00c1rea de Trabalho\\QAspirants\\serverest\\browser\\traces\\temp\\36a5dfa4-c006-48b1-879f-feae6847abb4"}</msg>
+<msg time="2025-06-17T13:36:53.777494" level="INFO">Starting Browser process C:\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:52115</msg>
+<msg time="2025-06-17T13:36:55.260028" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\cassi\\OneDrive\\Área de Trabalho\\QAspirants\\serverest\\browser\\traces\\temp\\36a5dfa4-c006-48b1-879f-feae6847abb4"}</msg>
 <arg>browser=${BROWSER}</arg>
 <arg>headless=${False}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2025-06-16T16:56:33.352186" elapsed="1.374008"/>
+<status status="PASS" start="2025-06-17T13:36:53.736348" elapsed="1.523988"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2025-06-16T16:56:37.317824" level="INFO">Successfully initialized new page object and opened url: https://compassuolfront.serverest.dev</msg>
-<msg time="2025-06-16T16:56:37.317936" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2025-06-17T13:36:58.670618" level="INFO">Successfully initialized new page object and opened url: https://compassuolfront.serverest.dev</msg>
+<msg time="2025-06-17T13:36:58.670760" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
 <arg>${BASE_URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2025-06-16T16:56:34.727416" elapsed="2.590764"/>
+<status status="PASS" start="2025-06-17T13:36:55.260765" elapsed="3.410279"/>
 </kw>
-<status status="PASS" start="2025-06-16T16:56:33.350453" elapsed="3.967952"/>
+<status status="PASS" start="2025-06-17T13:36:53.735239" elapsed="4.936045"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-16T16:56:37.319795" level="INFO">&amp;{user} = { nome=Cassia Yumi | email=ci@gmail.com | password=pwe123 }</msg>
+<msg time="2025-06-17T13:36:58.672974" level="INFO">&amp;{user} = { nome=Cassia Yumi | email=ci@gmail.com | password=pwe123 }</msg>
 <var>&amp;{user}</var>
 <arg>nome=Cassia Yumi</arg>
 <arg>email=ci@gmail.com</arg>
 <arg>password=pwe123</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-16T16:56:37.318955" elapsed="0.000896"/>
+<status status="PASS" start="2025-06-17T13:36:58.671998" elapsed="0.001044"/>
 </kw>
 <kw name="Go to signup Page" owner="SignupPage">
 <kw name="Go To" owner="Browser">
-<msg time="2025-06-16T16:56:38.026403" level="INFO">Successfully opened URL https://compassuolfront.serverest.dev/cadastrarusuarios</msg>
+<msg time="2025-06-17T13:36:59.483280" level="INFO">Successfully opened URL https://compassuolfront.serverest.dev/cadastrarusuarios</msg>
 <arg>${BASE_URL}/cadastrarusuarios</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Navigates to the given ``url``.</doc>
-<status status="PASS" start="2025-06-16T16:56:37.320856" elapsed="0.705901"/>
+<status status="PASS" start="2025-06-17T13:36:58.674360" elapsed="0.809160"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-06-16T16:56:38.068787" level="INFO">Waited for Element with selector xpath=//h2 at state visible</msg>
+<msg time="2025-06-17T13:36:59.526525" level="INFO">Waited for Element with selector xpath=//h2 at state visible</msg>
 <arg>xpath=//h2</arg>
 <arg>visible</arg>
 <arg>5</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-06-16T16:56:38.027164" elapsed="0.041848"/>
+<status status="PASS" start="2025-06-17T13:36:59.483789" elapsed="0.043009"/>
 </kw>
 <kw name="Get Text" owner="Browser">
-<msg time="2025-06-16T16:56:38.110714" level="INFO">Text: 'Cadastro'</msg>
+<msg time="2025-06-17T13:36:59.571920" level="INFO">Text: 'Cadastro'</msg>
 <arg>xpath=//h2</arg>
 <arg>equal</arg>
 <arg>Cadastro</arg>
@@ -62,84 +64,77 @@
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="PASS" start="2025-06-16T16:56:38.069296" elapsed="0.041588"/>
+<status status="PASS" start="2025-06-17T13:36:59.527091" elapsed="0.045009"/>
 </kw>
-<status status="PASS" start="2025-06-16T16:56:37.320335" elapsed="0.790735"/>
+<status status="PASS" start="2025-06-17T13:36:58.673565" elapsed="0.898735"/>
 </kw>
 <kw name="Submit signup form as administrator" owner="SignupPage">
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-06-16T16:56:38.113823" level="INFO">Fills the text 'Cassia Yumi' in the given field.</msg>
+<msg time="2025-06-17T13:36:59.574465" level="INFO">Fills the text 'Cassia Yumi' in the given field.</msg>
 <arg>css=input[data-testid=nome]</arg>
 <arg>${user}[nome]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-06-16T16:56:38.112546" elapsed="0.029986"/>
+<status status="PASS" start="2025-06-17T13:36:59.573660" elapsed="0.036225"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-06-16T16:56:38.144695" level="INFO">Fills the text 'ci@gmail.com' in the given field.</msg>
+<msg time="2025-06-17T13:36:59.611209" level="INFO">Fills the text 'ci@gmail.com' in the given field.</msg>
 <arg>css=input[data-testid=email]</arg>
 <arg>${user}[email]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-06-16T16:56:38.142925" elapsed="0.027837"/>
+<status status="PASS" start="2025-06-17T13:36:59.610212" elapsed="0.022054"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-06-16T16:56:38.172143" level="INFO">Fills the text 'pwe123' in the given field.</msg>
+<msg time="2025-06-17T13:36:59.633252" level="INFO">Fills the text 'pwe123' in the given field.</msg>
 <arg>css=input[data-testid=password]</arg>
 <arg>${user}[password]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-06-16T16:56:38.171071" elapsed="0.023843"/>
+<status status="PASS" start="2025-06-17T13:36:59.632516" elapsed="0.021894"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-06-16T16:56:38.196278" level="INFO">Clicks the element 'css=input[data-testid=checkbox]'.</msg>
+<msg time="2025-06-17T13:36:59.655496" level="INFO">Clicks the element 'css=input[data-testid=checkbox]'.</msg>
 <arg>css=input[data-testid=checkbox]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-06-16T16:56:38.195387" elapsed="0.050430"/>
+<status status="PASS" start="2025-06-17T13:36:59.654695" elapsed="0.063723"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-06-16T16:56:38.247283" level="INFO">Clicks the element 'css=button[data-testid=cadastrar]'.</msg>
+<msg time="2025-06-17T13:36:59.719885" level="INFO">Clicks the element 'css=button[data-testid=cadastrar]'.</msg>
 <arg>css=button[data-testid=cadastrar]</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-06-16T16:56:38.246159" elapsed="0.051453"/>
+<status status="PASS" start="2025-06-17T13:36:59.718795" elapsed="0.064950"/>
 </kw>
 <arg>&amp;{user}</arg>
-<status status="PASS" start="2025-06-16T16:56:38.111555" elapsed="0.186243"/>
+<status status="PASS" start="2025-06-17T13:36:59.572791" elapsed="0.211095"/>
 </kw>
 <kw name="Administrator should be logged in" owner="Header">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-16T16:56:38.300123" level="INFO">${element} = css=.jumbotron h1</msg>
+<msg time="2025-06-17T13:36:59.785470" level="INFO">${element} = css=.jumbotron h1</msg>
 <var>${element}</var>
 <arg>css=.jumbotron h1</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-16T16:56:38.299155" elapsed="0.001108"/>
+<status status="PASS" start="2025-06-17T13:36:59.785045" elapsed="0.000477"/>
 </kw>
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-06-16T16:56:43.584605" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
-<msg time="2025-06-16T16:56:43.584767" level="INFO">See also file:///C:/Users/cassi/OneDrive/%C3%81rea%20de%20Trabalho/QAspirants/serverest/playwright-log.txt for additional details.</msg>
-<msg time="2025-06-16T16:56:43.585182" level="FAIL">TimeoutError: locator.waitFor: Timeout 5000ms exceeded.
-Call log:
-  - waiting for locator('.jumbotron h1') to be visible
-</msg>
+<msg time="2025-06-17T13:37:03.751265" level="INFO">Waited for Element with selector css=.jumbotron h1 at state visible</msg>
 <arg>${element}</arg>
 <arg>visible</arg>
 <arg>5</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="FAIL" start="2025-06-16T16:56:38.300694" elapsed="5.296267">TimeoutError: locator.waitFor: Timeout 5000ms exceeded.
-Call log:
-  - waiting for locator('.jumbotron h1') to be visible
-</status>
+<status status="PASS" start="2025-06-17T13:36:59.785727" elapsed="3.965837"/>
 </kw>
 <kw name="Get Text" owner="Browser">
+<msg time="2025-06-17T13:37:03.777892" level="INFO">Text: 'Bem Vindo Cassia Yumi'</msg>
 <arg>${element}</arg>
 <arg>equal</arg>
 <arg>Bem Vindo ${name}</arg>
@@ -147,39 +142,39 @@ Call log:
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns text attribute of the element found by ``selector``.</doc>
-<status status="NOT RUN" start="2025-06-16T16:56:43.597183" elapsed="0.000195"/>
+<status status="PASS" start="2025-06-17T13:37:03.751984" elapsed="0.026018"/>
 </kw>
 <arg>${user}[nome]</arg>
-<status status="FAIL" start="2025-06-16T16:56:38.298276" elapsed="5.299411">TimeoutError: locator.waitFor: Timeout 5000ms exceeded.
-Call log:
-  - waiting for locator('.jumbotron h1') to be visible
-</status>
+<status status="PASS" start="2025-06-17T13:36:59.784294" elapsed="3.993827"/>
 </kw>
 <kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
-<msg time="2025-06-16T16:56:43.829205" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-17T13:37:03.919130" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="PASS" start="2025-06-16T16:56:43.598189" elapsed="0.231244"/>
+<status status="PASS" start="2025-06-17T13:37:03.778535" elapsed="0.140960"/>
 </kw>
-<msg time="2025-06-16T16:56:43.853897" level="INFO">Switching context to context=5a75c859-f745-4316-98fd-337bc06d41b9 in CURRENT</msg>
-<msg time="2025-06-16T16:56:43.864835" level="INFO">Successfully changed active context: context=5a75c859-f745-4316-98fd-337bc06d41b9</msg>
-<msg time="2025-06-16T16:56:43.973068" level="INFO">Successfully closed Context</msg>
-<status status="FAIL" start="2025-06-16T16:56:33.349091" elapsed="10.480636">TimeoutError: locator.waitFor: Timeout 5000ms exceeded.
-Call log:
-  - waiting for locator('.jumbotron h1') to be visible
-</status>
+<msg time="2025-06-17T13:37:03.937869" level="INFO">Switching context to context=e918c29b-5030-4058-b904-2d10e4b21f56 in CURRENT</msg>
+<msg time="2025-06-17T13:37:03.947508" level="INFO">Successfully changed active context: context=e918c29b-5030-4058-b904-2d10e4b21f56</msg>
+<msg time="2025-06-17T13:37:04.028874" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-06-17T13:36:53.734314" elapsed="10.185419"/>
 </test>
 <doc>Cenários de testes do cadastro de usuários</doc>
-<status status="FAIL" start="2025-06-16T16:56:32.580562" elapsed="11.400795"/>
+<status status="PASS" start="2025-06-17T13:36:53.157207" elapsed="10.880417"/>
+</suite>
+<status status="PASS" start="2025-06-17T13:36:53.155508" elapsed="10.897199"/>
+</suite>
+<status status="PASS" start="2025-06-17T13:36:53.126208" elapsed="10.927876"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Signup" id="s1" pass="0" fail="1" skip="0">Signup</stat>
+<stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
+<stat name="Users" id="s1-s1" pass="1" fail="0" skip="0">Tests.Users</stat>
+<stat name="Signup" id="s1-s1-s1" pass="1" fail="0" skip="0">Tests.Users.Signup</stat>
 </suite>
 </statistics>
 <errors>

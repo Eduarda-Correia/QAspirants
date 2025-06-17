@@ -21,3 +21,12 @@ Submit signup form as administrator
     Click        css=input[data-testid=checkbox]
 
     Click        css=button[data-testid=cadastrar]
+
+Submit signup form as user
+    [Arguments]    &{user}
+
+    Fill Text    css=input[data-testid=nome]        ${user}[nome]
+    Fill Text    css=input[data-testid=email]       ${user}[email]
+    Fill Text    css=input[data-testid=password]    ${user}[password]
+    
+    Click        css=button[data-testid=cadastrar]
