@@ -4,6 +4,7 @@ Documentation    Elementos e ações usadas para usar no teste de Listagem de pr
 Library    Browser
 
 Resource    ../env.resource
+Resource    ../../resources/base.resource
 
 *** Keywords ***
 Submit signup form
@@ -22,16 +23,21 @@ Go to signup
 
 Add First Two Products to Cart    # Adicionar Primeiros Dois Produtos ao Carrinho
 
-    Click    (//div[contains(@class, 'container-fluid')]//div[contains(@class, 'card') and contains(@class, 'col-3')])[1]//button[@data-testid='adicionarNaLista']
+    Click    xpath=(//div[contains(@class, 'container-fluid')]//div[contains(@class, 'card') and contains(@class, 'col-3')])[1]//button[@data-testid='adicionarNaLista']
+    Sleep    1
+
+    Go To    ${BASE_URL}/home
+    Sleep    1
+
+    Wait For Elements State    xpath=(//div[contains(@class, 'container-fluid')]//div[contains(@class, 'card') and contains(@class, 'col-3')])[2]//button[@data-testid='adicionarNaLista']    visible    timeout=15s
+    Click    xpath=(//div[contains(@class, 'container-fluid')]//div[contains(@class, 'card') and contains(@class, 'col-3')])[2]//button[@data-testid='adicionarNaLista']
+    Sleep    1
+
+Clear Product List    # Limpa toda a lista de compras
+
+    Go To    ${BASE_URL}/minhaListaDeProdutos
+
+    Wait For Elements State    xpath=//button[@data-testid='limparLista']    visible    timeout=10
+    
+    Click    xpath=//button[@data-testid='limparLista']
     Sleep    0.5s
-    Go To    https://compassuolfront.serverest.dev/home
-    Wait For Elements State    (//div[contains(@class, 'container-fluid')]//div[contains(@class, 'card') and contains(@class, 'col-3')])[2]//button[@data-testid='adicionarNaLista']    visible    timeout=15s
-    Click    (//div[contains(@class, 'container-fluid')]//div[contains(@class, 'card') and contains(@class, 'col-3')])[2]//button[@data-testid='adicionarNaLista']
-    Sleep    0.5s
-
-    #${cards}=    Get Element    css=.container-fluid .card.col-3
-    #${first_card}=    Set Variable    ${cards[0]}
-    #${second_card}=    Set Variable    ${cards[1]}
-
-    #${first_link}=    Get Element    xpath=.//a[@data-testid="product-detail-link"]
-
