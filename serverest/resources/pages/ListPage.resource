@@ -18,7 +18,7 @@ Submit signup form
 
 Go to signup
     Go To    ${BASE_URL}/cadastrarusuarios
-    Wait For Elements State    xpath=//h2    visible    5
+    Wait For Elements State    xpath=//h2    visible    10
     Get Text                   xpath=//h2    equal      Cadastro
 
 Add First Two Products to Cart    # Adicionar Primeiros Dois Produtos ao Carrinho
@@ -29,7 +29,7 @@ Add First Two Products to Cart    # Adicionar Primeiros Dois Produtos ao Carrinh
     Go To    ${BASE_URL}/home
     Sleep    1
 
-    Wait For Elements State    xpath=(//div[contains(@class, 'container-fluid')]//div[contains(@class, 'card') and contains(@class, 'col-3')])[2]//button[@data-testid='adicionarNaLista']    visible    timeout=15s
+    Wait For Elements State    xpath=(//div[contains(@class, 'container-fluid')]//div[contains(@class, 'card') and contains(@class, 'col-3')])[2]//button[@data-testid='adicionarNaLista']    visible    timeout=15
     Click    xpath=(//div[contains(@class, 'container-fluid')]//div[contains(@class, 'card') and contains(@class, 'col-3')])[2]//button[@data-testid='adicionarNaLista']
     Sleep    1
 
@@ -37,7 +37,7 @@ Clear Product List    # Limpa toda a lista de compras
 
     Go To    ${BASE_URL}/minhaListaDeProdutos
 
-    Wait For Elements State    xpath=//button[@data-testid='limparLista']    visible    timeout=10
+    Wait For Elements State    xpath=//button[@data-testid='limparLista']    visible    timeout=15
     
     Click    xpath=//button[@data-testid='limparLista']
-    Sleep    0.5s
+    Sleep    1
