@@ -20,5 +20,24 @@ Automatizar casos de teste utilizando Robot Framework, aplicando boas práticas 
 - `feature` → desenvolvimento de novas funcionalidades
 
 ## Estrutura
-(vamos colocar após pronto)
+
+├── log/                   # Relatórios de execução
+│   ├── log.html
+│   ├── output.xml
+│   ├── playwright-log.txt
+│   └── report.html
+│
+├── serverest/
+│   └── browser/screenshot/     # Screenshots dos testes
+│
+├── resources/             # Arquivos de recursos
+│   ├── fixtures/          # Massa de dados (ex.: user.json)
+│   └── pages/             # Page Objects (POM)
+│       └── components/    # Componentes reutilizáveis
+│
+├── tests/                 # Casos de teste organizados por funcionalidade
+│   ├── products/
+│   ├── shoppingList/
+│   └── users/
+
 
