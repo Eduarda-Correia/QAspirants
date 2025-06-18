@@ -12,7 +12,6 @@ Open users list
 
 Delete an user
     [Arguments]   ${admin_user}     ${email}
-    Log To Console    ${email}
     Open users list    ${admin_user}
     ${xpath_button}    Set Variable    xpath=//td[normalize-space(text())='${email}']/parent::tr//button[contains(text(),'Excluir')]
     Scroll To Element    ${xpath_button}

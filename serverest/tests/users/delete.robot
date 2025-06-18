@@ -9,6 +9,7 @@ Library    Collections
 
 *** Test Cases ***
 Should delete an user
+    [Tags]       DELETE    User    Positivo
     ${data}=     Get fixture    user    create
     ${user2}=    Get From Dictionary    ${data}    admin_to_delete_other_users
     Set Test Variable     ${admin_to_delete}    ${user2}
