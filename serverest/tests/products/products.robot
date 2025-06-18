@@ -10,19 +10,19 @@ Test Teardown        Take Screenshot
 
 *** Test Cases ***
 Registering a new product
-    
+    [Tags]    Product
     
     ${name}         FakerLibrary.Name
     ${email}        FakerLibrary.Free Email
     ${password}     Set Variable        pwd123
 
-    &{user}        Create Dictionary    
+    ${user}        Create Dictionary    
     ...            nome=${name}
     ...            email=${email}
     ...            password=${password}
     
     Go to signup Page
-    Submit signup form as administrator    &{user}
+    Submit signup form as administrator    ${user}
     Administrator should be logged in      ${user}[nome]
     Go to products Page
     
@@ -53,13 +53,13 @@ Listing products on the products page
     ${email}        FakerLibrary.Free Email
     ${password}     Set Variable    pwd123
 
-    &{user}    Create Dictionary
+    ${user}    Create Dictionary
     ...        nome=${name}
     ...        email=${email}
     ...        password=${password}
 
     Go to signup Page
-    Submit signup form as administrator    &{user}
+    Submit signup form as administrator    ${user}
     Administrator should be logged in      ${user}[nome]
 
     Go to ListProducts Page
@@ -69,8 +69,6 @@ Listing products on the products page
 
     FOR    ${produto}    IN    @{produtos}
         ${nome}=    Get Text    ${produto}
-        Log    Produto: ${nome}
-        Log To Console    Produto: ${nome}
     END
 
     Should Not Be Empty    ${produtos}    Nenhum produto foi listado na página.
@@ -81,13 +79,13 @@ Product excluded
     ${email}        FakerLibrary.Free Email
     ${password}     Set Variable        pwd123
 
-    &{user}        Create Dictionary    
+    ${user}        Create Dictionary    
     ...            nome=${name}
     ...            email=${email}
     ...            password=${password}
     
     Go to signup Page
-    Submit signup form as administrator    &{user}
+    Submit signup form as administrator    ${user}
     Administrator should be logged in      ${user}[nome]
     Go to products Page
     
@@ -108,4 +106,3 @@ Product excluded
     ${product_name}=    Set Variable    ${product}[nome]
     Product should be listed            ${product_name}
     Click    xpath=//td[normalize-space(text())="${product_name}"]/following-sibling::td//button[contains(@class, 'btn-danger')]
-    Log    Excluindo o produto: ${product_name}
