@@ -1,15 +1,21 @@
 *** Settings ***
-Documentation        Elementos e ações na pagina de login
-
-Library              Browser
-
-Resource             ../base.resource
+Library    Browser
+Resource   ../env.resource
+Resource    components/Header.resource
 
 *** Keywords ***
+Go to login Page
+    Go To    ${BASE_URL}/login
+    Wait For Elements State    css=form    visible    5
+
+Login as Administrator
+    [Arguments]    ${user}
+    Go to login Page
+    Submit login form    ${user}
+    Administrator should be logged in    ${user['nome']}
 Submit login form
-    [Arguments]    &{user}
+    [Arguments]    ${user}
+    Fill Text    ${INPUT_EMAIL}        ${user['email']}
+    Fill Text    ${INPUT_PASSWORD_LOGIN}     ${user['password']}
+    Click        ${BUTTON_LOGIN}
 
-    Fill Text    css=input[data-testid=email]        ${user}[email]
-    Fill Text    css=input[data-testid=password]     ${user}[password]
-
-    Click        css=button[data-testid=entrar]
