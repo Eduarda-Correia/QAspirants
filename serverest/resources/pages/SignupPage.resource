@@ -2,6 +2,7 @@
 Documentation        Elementos e ações na pagina de cadastro
 
 Library              Browser
+Library              FakerLibrary
 
 Resource             ../env.resource
 
@@ -13,6 +14,7 @@ Go to signup Page
 
 Submit signup form as administrator
     [Arguments]    &{user}
+
 
     Fill Text    css=input[data-testid=nome]        ${user}[nome]
     Fill Text    css=input[data-testid=email]       ${user}[email]

@@ -3,6 +3,7 @@ Resource   env.resource
 Resource   ../resources/pages/components/Header.resource
 
 Resource   pages/SignupPage.resource
+Resource   pages/ProductPage.resource
 
 Library    Browser
 

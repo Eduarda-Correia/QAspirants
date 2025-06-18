@@ -1,0 +1,1923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.1 (Python 3.12.7 on linux)" generated="2025-06-18T03:34:51.648617" rpa="false" schemaversion="5">
+<suite id="s1" name="Products" source="/home/cortes/Documents/Compass_Estágio/QAspirants/QAspirants/serverest/tests/products">
+<suite id="s1-s1" name="Products" source="/home/cortes/Documents/Compass_Estágio/QAspirants/QAspirants/serverest/tests/products/products.robot">
+<test id="s1-s1-t1" name="Registering a new product" line="12">
+<kw name="Start Session" owner="base" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-06-18T03:34:52.071526" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/home/cortes/Documents/Compass_Est\u00e1gio/QAspirants/QAspirants/serverest/logs/browser/traces/temp/8d40c679-444e-44c0-9cbf-8a2aa84c3dc0"}</msg>
+<msg time="2025-06-18T03:34:52.081183" level="INFO">Starting Browser process /home/cortes/Documents/Compass_Estágio/QAspirants/QAspirants/venv/lib/python3.12/site-packages/Browser/wrapper/index.js using at 127.0.0.1:57953</msg>
+<msg time="2025-06-18T03:34:53.241042" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/home/cortes/Documents/Compass_Estágio/QAspirants/QAspirants/serverest/logs/browser/traces/temp/8d40c679-444e-44c0-9cbf-8a2aa84c3dc0"}</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${False}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-06-18T03:34:52.070461" elapsed="1.170833"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-06-18T03:34:58.819622" level="INFO">Successfully initialized new page object and opened url: https://compassuolfront.serverest.dev</msg>
+<msg time="2025-06-18T03:34:58.819733" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-06-18T03:34:53.241631" elapsed="5.578302"/>
+</kw>
+<status status="PASS" start="2025-06-18T03:34:52.069091" elapsed="6.751021"/>
+</kw>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-06-18T03:34:58.821406" level="INFO">${name} = Bobby Cline</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-06-18T03:34:58.820501" elapsed="0.000973"/>
+</kw>
+<kw name="Free Email" owner="FakerLibrary">
+<msg time="2025-06-18T03:34:58.822369" level="INFO">${email} = dmercado@yahoo.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2025-06-18T03:34:58.821791" elapsed="0.000631"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-18T03:34:58.822965" level="INFO">${password} = pwd123</msg>
+<var>${password}</var>
+<arg>pwd123</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-18T03:34:58.822678" elapsed="0.000331"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-18T03:34:58.823945" level="INFO">&amp;{user} = { nome=Bobby Cline | email=dmercado@yahoo.com | password=pwd123 }</msg>
+<var>&amp;{user}</var>
+<arg>nome=${name}</arg>
+<arg>email=${email}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-18T03:34:58.823264" elapsed="0.000733"/>
+</kw>
+<kw name="Go to signup Page" owner="SignupPage">
+<kw name="Go To" owner="Browser">
+<msg time="2025-06-18T03:34:59.478809" level="INFO">Successfully opened URL https://compassuolfront.serverest.dev/cadastrarusuarios</msg>
+<arg>${BASE_URL}/cadastrarusuarios</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-06-18T03:34:58.824880" elapsed="0.654234"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-06-18T03:34:59.545791" level="INFO">Waited for Element with selector xpath=//h2 at state visible</msg>
+<arg>xpath=//h2</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-06-18T03:34:59.479518" elapsed="0.066547"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:34:59.628141" level="INFO">Text: 'Cadastro'</msg>
+<arg>xpath=//h2</arg>
+<arg>equal</arg>
+<arg>Cadastro</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:34:59.546345" elapsed="0.082221"/>
+</kw>
+<status status="PASS" start="2025-06-18T03:34:58.824366" elapsed="0.804552"/>
+</kw>
+<kw name="Submit signup form as administrator" owner="SignupPage">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:34:59.632953" level="INFO">Fills the text 'Bobby Cline' in the given field.</msg>
+<arg>css=input[data-testid=nome]</arg>
+<arg>${user}[nome]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:34:59.631391" elapsed="0.041013"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:34:59.673666" level="INFO">Fills the text 'dmercado@yahoo.com' in the given field.</msg>
+<arg>css=input[data-testid=email]</arg>
+<arg>${user}[email]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:34:59.672757" elapsed="0.024679"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:34:59.698403" level="INFO">Fills the text 'pwd123' in the given field.</msg>
+<arg>css=input[data-testid=password]</arg>
+<arg>${user}[password]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:34:59.697712" elapsed="0.021214"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-18T03:34:59.719812" level="INFO">Clicks the element 'css=input[data-testid=checkbox]'.</msg>
+<arg>css=input[data-testid=checkbox]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:34:59.719194" elapsed="0.075406"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-18T03:34:59.796454" level="INFO">Clicks the element 'css=button[data-testid=cadastrar]'.</msg>
+<arg>css=button[data-testid=cadastrar]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:34:59.795060" elapsed="0.068555"/>
+</kw>
+<arg>&amp;{user}</arg>
+<status status="PASS" start="2025-06-18T03:34:59.629874" elapsed="0.234266"/>
+</kw>
+<kw name="Administrator should be logged in" owner="Header">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-18T03:34:59.868070" level="INFO">${element} = css=.jumbotron h1</msg>
+<var>${element}</var>
+<arg>css=.jumbotron h1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-18T03:34:59.867378" elapsed="0.000805"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-06-18T03:35:03.774846" level="INFO">Waited for Element with selector css=.jumbotron h1 at state visible</msg>
+<arg>${element}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-06-18T03:34:59.868663" elapsed="3.906642"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:03.820625" level="INFO">Text: 'Bem Vindo Bobby Cline'</msg>
+<arg>${element}</arg>
+<arg>equal</arg>
+<arg>Bem Vindo ${name}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:03.775883" elapsed="0.045100"/>
+</kw>
+<arg>${user}[nome]</arg>
+<status status="PASS" start="2025-06-18T03:34:59.865295" elapsed="3.956108"/>
+</kw>
+<kw name="Go to products Page" owner="ProductPage">
+<kw name="Go To" owner="Browser">
+<msg time="2025-06-18T03:35:04.889944" level="INFO">Successfully opened URL https://compassuolfront.serverest.dev/admin/cadastrarprodutos</msg>
+<arg>${BASE_URL}/admin/cadastrarprodutos</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-06-18T03:35:03.823349" elapsed="1.066814"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-06-18T03:35:04.961980" level="INFO">Waited for Element with selector xpath=//h1[contains(text(), 'Cadastro de Produtos')] at state visible</msg>
+<arg>xpath=//h1[contains(text(), 'Cadastro de Produtos')]</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-06-18T03:35:04.890509" elapsed="0.071762"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:05.014442" level="INFO">Text: 'Cadastro de Produtos'</msg>
+<arg>xpath=//h1[contains(text(), 'Cadastro de Produtos')]</arg>
+<arg>equal</arg>
+<arg>Cadastro de Produtos</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:04.962620" elapsed="0.052145"/>
+</kw>
+<status status="PASS" start="2025-06-18T03:35:03.822182" elapsed="1.192919"/>
+</kw>
+<kw name="Word" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:05.016625" level="INFO">${name_product} = money</msg>
+<var>${name_product}</var>
+<doc>Generate a word.</doc>
+<status status="PASS" start="2025-06-18T03:35:05.015772" elapsed="0.001012"/>
+</kw>
+<kw name="Random Number" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:05.018485" level="INFO">${price} = 4</msg>
+<var>${price}</var>
+<arg>1</arg>
+<arg>1000</arg>
+<doc>Generate a random integer according to the following rules:</doc>
+<status status="PASS" start="2025-06-18T03:35:05.017291" elapsed="0.001330"/>
+</kw>
+<kw name="Sentence" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:05.019867" level="INFO">${description} = Compare benefit office reason morning morning thing.</msg>
+<var>${description}</var>
+<doc>Generate a sentence.</doc>
+<status status="PASS" start="2025-06-18T03:35:05.019116" elapsed="0.000855"/>
+</kw>
+<kw name="Random Number" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:05.021316" level="INFO">${quantity} = 2</msg>
+<var>${quantity}</var>
+<arg>1</arg>
+<arg>100</arg>
+<doc>Generate a random integer according to the following rules:</doc>
+<status status="PASS" start="2025-06-18T03:35:05.020497" elapsed="0.000925"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-18T03:35:05.023801" level="INFO">${product} = {'nome': 'money', 'preco': 4, 'descricao': 'Compare benefit office reason morning morning thing.', 'quantidade': 2}</msg>
+<var>${product}</var>
+<arg>nome=${name_product}</arg>
+<arg>preco=${price}</arg>
+<arg>descricao=${description}</arg>
+<arg>quantidade=${quantity}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-18T03:35:05.022008" elapsed="0.001907"/>
+</kw>
+<kw name="Submit products form" owner="ProductPage">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:05.027356" level="INFO">Fills the text 'money' in the given field.</msg>
+<arg>css=input[name="nome"]</arg>
+<arg>${product}[nome]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:05.025920" elapsed="0.039398"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:05.066520" level="INFO">Fills the text '4' in the given field.</msg>
+<arg>css=input[name="price"]</arg>
+<arg>${product}[preco]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:05.065637" elapsed="0.029512"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:05.096364" level="INFO">Fills the text 'Compare benefit office reason morning morning thing.' in the given field.</msg>
+<arg>css=#description</arg>
+<arg>${product}[descricao]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:05.095495" elapsed="0.018659"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:05.115367" level="INFO">Fills the text '2' in the given field.</msg>
+<arg>css=#quantity</arg>
+<arg>${product}[quantidade]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:05.114480" elapsed="0.020763"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-18T03:35:05.136577" level="INFO">Clicks the element 'xpath=//button[text()='Cadastrar']'.</msg>
+<arg>xpath=//button[text()='Cadastrar']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:05.135706" elapsed="0.056032"/>
+</kw>
+<arg>&amp;{product}</arg>
+<status status="PASS" start="2025-06-18T03:35:05.024617" elapsed="0.167348"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-18T03:35:10.192976" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-18T03:35:05.192342" elapsed="5.001017"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-18T03:35:10.195110" level="INFO">${product_name} = money</msg>
+<var>${product_name}</var>
+<arg>${product}[nome]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-18T03:35:10.194132" elapsed="0.001112"/>
+</kw>
+<kw name="Product should be listed" owner="ProductPage">
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:10.242463" level="INFO">Text: 'money'</msg>
+<arg>xpath=//table[contains(@class,'table-striped')]//td[normalize-space(text())="${product_name}"]</arg>
+<arg>==</arg>
+<arg>${product_name}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:10.197022" elapsed="0.045786"/>
+</kw>
+<arg>${product_name}</arg>
+<status status="PASS" start="2025-06-18T03:35:10.195976" elapsed="0.047209"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-06-18T03:35:10.417627" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-06-18T03:35:10.244387" elapsed="0.173626"/>
+</kw>
+<msg time="2025-06-18T03:35:10.455461" level="INFO">Switching context to context=31fa6bf8-2e27-4be7-b00d-3843cd1276e9 in CURRENT</msg>
+<msg time="2025-06-18T03:35:10.477430" level="INFO">Successfully changed active context: context=31fa6bf8-2e27-4be7-b00d-3843cd1276e9</msg>
+<msg time="2025-06-18T03:35:10.530913" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-06-18T03:34:52.068096" elapsed="18.350301"/>
+</test>
+<test id="s1-s1-t2" name="Listing products on the products page" line="50">
+<kw name="Start Session" owner="base" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-06-18T03:35:10.540299" level="INFO">Switching browser to browser=551ef8a0-46e1-4af6-ac42-fa31ad1db420</msg>
+<msg time="2025-06-18T03:35:10.544400" level="INFO">Successfully changed active browser: browser=551ef8a0-46e1-4af6-ac42-fa31ad1db420</msg>
+<msg time="2025-06-18T03:35:10.544672" level="INFO">Reusing existing browser with id: browser=551ef8a0-46e1-4af6-ac42-fa31ad1db420</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${False}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-06-18T03:35:10.539017" elapsed="0.005805"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-06-18T03:35:12.387722" level="INFO">Successfully initialized new page object and opened url: https://compassuolfront.serverest.dev</msg>
+<msg time="2025-06-18T03:35:12.387885" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-06-18T03:35:10.545236" elapsed="1.843006"/>
+</kw>
+<status status="PASS" start="2025-06-18T03:35:10.538256" elapsed="1.850231"/>
+</kw>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:12.389857" level="INFO">${name} = Antonio Smith</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-06-18T03:35:12.388907" elapsed="0.001040"/>
+</kw>
+<kw name="Free Email" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:12.391685" level="INFO">${email} = fischerashley@hotmail.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2025-06-18T03:35:12.390401" elapsed="0.001386"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-18T03:35:12.392754" level="INFO">${password} = pwd123</msg>
+<var>${password}</var>
+<arg>pwd123</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-18T03:35:12.392252" elapsed="0.000588"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-18T03:35:12.394331" level="INFO">&amp;{user} = { nome=Antonio Smith | email=fischerashley@hotmail.com | password=pwd123 }</msg>
+<var>&amp;{user}</var>
+<arg>nome=${name}</arg>
+<arg>email=${email}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-18T03:35:12.393314" elapsed="0.001116"/>
+</kw>
+<kw name="Go to signup Page" owner="SignupPage">
+<kw name="Go To" owner="Browser">
+<msg time="2025-06-18T03:35:13.038526" level="INFO">Successfully opened URL https://compassuolfront.serverest.dev/cadastrarusuarios</msg>
+<arg>${BASE_URL}/cadastrarusuarios</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-06-18T03:35:12.395699" elapsed="0.643149"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-06-18T03:35:13.135431" level="INFO">Waited for Element with selector xpath=//h2 at state visible</msg>
+<arg>xpath=//h2</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-06-18T03:35:13.039265" elapsed="0.096639"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:13.203996" level="INFO">Text: 'Cadastro'</msg>
+<arg>xpath=//h2</arg>
+<arg>equal</arg>
+<arg>Cadastro</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:13.136497" elapsed="0.067873"/>
+</kw>
+<status status="PASS" start="2025-06-18T03:35:12.394962" elapsed="0.809751"/>
+</kw>
+<kw name="Submit signup form as administrator" owner="SignupPage">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:13.208138" level="INFO">Fills the text 'Antonio Smith' in the given field.</msg>
+<arg>css=input[data-testid=nome]</arg>
+<arg>${user}[nome]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:13.206790" elapsed="0.044863"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:13.253464" level="INFO">Fills the text 'fischerashley@hotmail.com' in the given field.</msg>
+<arg>css=input[data-testid=email]</arg>
+<arg>${user}[email]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:13.252249" elapsed="0.027121"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:13.281293" level="INFO">Fills the text 'pwd123' in the given field.</msg>
+<arg>css=input[data-testid=password]</arg>
+<arg>${user}[password]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:13.280045" elapsed="0.023054"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-18T03:35:13.304692" level="INFO">Clicks the element 'css=input[data-testid=checkbox]'.</msg>
+<arg>css=input[data-testid=checkbox]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:13.303583" elapsed="0.065255"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-18T03:35:13.370307" level="INFO">Clicks the element 'css=button[data-testid=cadastrar]'.</msg>
+<arg>css=button[data-testid=cadastrar]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:13.369399" elapsed="0.072672"/>
+</kw>
+<arg>&amp;{user}</arg>
+<status status="PASS" start="2025-06-18T03:35:13.205489" elapsed="0.236896"/>
+</kw>
+<kw name="Administrator should be logged in" owner="Header">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-18T03:35:13.444966" level="INFO">${element} = css=.jumbotron h1</msg>
+<var>${element}</var>
+<arg>css=.jumbotron h1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-18T03:35:13.444352" elapsed="0.000726"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-06-18T03:35:17.813960" level="INFO">Waited for Element with selector css=.jumbotron h1 at state visible</msg>
+<arg>${element}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-06-18T03:35:13.445697" elapsed="4.368683"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:17.839874" level="INFO">Text: 'Bem Vindo Antonio Smith'</msg>
+<arg>${element}</arg>
+<arg>equal</arg>
+<arg>Bem Vindo ${name}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:17.815096" elapsed="0.025042"/>
+</kw>
+<arg>${user}[nome]</arg>
+<status status="PASS" start="2025-06-18T03:35:13.443067" elapsed="4.397307"/>
+</kw>
+<kw name="Go to ListProducts Page" owner="ProductPage">
+<kw name="Go To" owner="Browser">
+<msg time="2025-06-18T03:35:18.480664" level="INFO">Successfully opened URL https://compassuolfront.serverest.dev/admin/listarprodutos</msg>
+<arg>${BASE_URL}/admin/listarprodutos</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-06-18T03:35:17.841785" elapsed="0.639095"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-06-18T03:35:18.530537" level="INFO">Waited for Element with selector xpath=//h1[contains(text(), 'Lista dos Produtos')] at state visible</msg>
+<arg>xpath=//h1[contains(text(), 'Lista dos Produtos')]</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.481145" elapsed="0.049973"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:18.581003" level="INFO">Text: 'Lista dos Produtos'</msg>
+<arg>xpath=//h1[contains(text(), 'Lista dos Produtos')]</arg>
+<arg>equal</arg>
+<arg>Lista dos Produtos</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.531712" elapsed="0.049659"/>
+</kw>
+<status status="PASS" start="2025-06-18T03:35:17.841045" elapsed="0.740764"/>
+</kw>
+<kw name="Get Elements" owner="Browser">
+<msg time="2025-06-18T03:35:18.749164" level="INFO">Found locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').first(),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(1),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(2),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(3),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(4),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(5),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(6),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(7),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(8),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(9),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(10),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(11),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(12),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(13),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(14),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(15),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(16),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(17),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(18),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(19),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(20),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(21),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(22),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(23),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(24),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(25),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(26),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(27),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(28),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(29),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(30),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(31),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(32),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(33),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(34),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(35),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(36),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(37),locator('//table[contains(@class,\'table-striped\')]//tbody//tr/td[1]').nth(38) Locators successfully.</msg>
+<msg time="2025-06-18T03:35:18.749819" level="INFO">${produtos} = ["xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=0", "xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=1", "xpath=//table[contains(@class,'table-striped...</msg>
+<var>${produtos}</var>
+<arg>xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to Playwright [https://playwright.dev/docs/api/class-locator|Locator]
+for all matched elements by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.582619" elapsed="0.167274"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:18.750598" level="INFO">Lista de produtos encontrados:</msg>
+<arg>Lista de produtos encontrados:</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.750288" elapsed="0.000407"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:18.775749" level="INFO">Text: 'William Strickland'</msg>
+<msg time="2025-06-18T03:35:18.776194" level="INFO">${nome} = William Strickland</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.751664" elapsed="0.024675"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:18.777650" level="INFO">Produto: William Strickland</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.776909" elapsed="0.000921"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.778289" elapsed="0.001072"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=0</var>
+<status status="PASS" start="2025-06-18T03:35:18.751385" elapsed="0.028161"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:18.819009" level="INFO">Text: 'Elizabeth Martin'</msg>
+<msg time="2025-06-18T03:35:18.819471" level="INFO">${nome} = Elizabeth Martin</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.780998" elapsed="0.038568"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:18.820727" level="INFO">Produto: Elizabeth Martin</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.820007" elapsed="0.000897"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.821352" elapsed="0.000742"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=1</var>
+<status status="PASS" start="2025-06-18T03:35:18.780247" elapsed="0.042090"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:18.863501" level="INFO">Text: 'money'</msg>
+<msg time="2025-06-18T03:35:18.863953" level="INFO">${nome} = money</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.823425" elapsed="0.040650"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:18.865409" level="INFO">Produto: money</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.864646" elapsed="0.000941"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.866708" elapsed="0.000776"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=2</var>
+<status status="PASS" start="2025-06-18T03:35:18.822873" elapsed="0.044951"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:18.905966" level="INFO">Text: 'Marvin Anderson'</msg>
+<msg time="2025-06-18T03:35:18.906446" level="INFO">${nome} = Marvin Anderson</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.869041" elapsed="0.037523"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:18.907794" level="INFO">Produto: Marvin Anderson</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.907071" elapsed="0.000897"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.908470" elapsed="0.000816"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=3</var>
+<status status="PASS" start="2025-06-18T03:35:18.868491" elapsed="0.040976"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:18.942559" level="INFO">Text: 'Jessica Atkinson'</msg>
+<msg time="2025-06-18T03:35:18.942987" level="INFO">${nome} = Jessica Atkinson</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.910440" elapsed="0.032662"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:18.944412" level="INFO">Produto: Jessica Atkinson</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.943686" elapsed="0.000898"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.945018" elapsed="0.000740"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=4</var>
+<status status="PASS" start="2025-06-18T03:35:18.909900" elapsed="0.036043"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:18.981999" level="INFO">Text: 'Diana Terry'</msg>
+<msg time="2025-06-18T03:35:18.982471" level="INFO">${nome} = Diana Terry</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.947058" elapsed="0.035527"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:18.983853" level="INFO">Produto: Diana Terry</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.983107" elapsed="0.000924"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.984507" elapsed="0.000747"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=5</var>
+<status status="PASS" start="2025-06-18T03:35:18.946518" elapsed="0.038908"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.021934" level="INFO">Text: 'Scott Krueger'</msg>
+<msg time="2025-06-18T03:35:19.022459" level="INFO">${nome} = Scott Krueger</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:18.986601" elapsed="0.035964"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.023867" level="INFO">Produto: Scott Krueger</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.023027" elapsed="0.001047"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.024473" elapsed="0.000671"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=6</var>
+<status status="PASS" start="2025-06-18T03:35:18.985983" elapsed="0.039373"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.063776" level="INFO">Text: 'Jerry Rodriguez'</msg>
+<msg time="2025-06-18T03:35:19.064166" level="INFO">${nome} = Jerry Rodriguez</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.026158" elapsed="0.038147"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.065474" level="INFO">Produto: Jerry Rodriguez</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.064826" elapsed="0.000813"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.066014" elapsed="0.000679"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=7</var>
+<status status="PASS" start="2025-06-18T03:35:19.025734" elapsed="0.041099"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.105271" level="INFO">Text: 'Ethan Baker'</msg>
+<msg time="2025-06-18T03:35:19.105685" level="INFO">${nome} = Ethan Baker</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.067888" elapsed="0.037905"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.106976" level="INFO">Produto: Ethan Baker</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.106331" elapsed="0.000816"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.107559" elapsed="0.000698"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=8</var>
+<status status="PASS" start="2025-06-18T03:35:19.067296" elapsed="0.041122"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.141953" level="INFO">Text: 'Logitech MX Vertical'</msg>
+<msg time="2025-06-18T03:35:19.142240" level="INFO">${nome} = Logitech MX Vertical</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.109251" elapsed="0.033059"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.143122" level="INFO">Produto: Logitech MX Vertical</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.142684" elapsed="0.000565"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.143500" elapsed="0.000556"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=9</var>
+<status status="PASS" start="2025-06-18T03:35:19.108778" elapsed="0.035518"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.173769" level="INFO">Text: 'Judith Love'</msg>
+<msg time="2025-06-18T03:35:19.174182" level="INFO">${nome} = Judith Love</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.145424" elapsed="0.028908"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.175746" level="INFO">Produto: Judith Love</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.174858" elapsed="0.001175"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.176590" elapsed="0.000802"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=10</var>
+<status status="PASS" start="2025-06-18T03:35:19.144935" elapsed="0.032629"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.211796" level="INFO">Text: 'Chris Reyes'</msg>
+<msg time="2025-06-18T03:35:19.212229" level="INFO">${nome} = Chris Reyes</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.178430" elapsed="0.033916"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.213532" level="INFO">Produto: Chris Reyes</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.212864" elapsed="0.000853"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.214199" elapsed="0.000795"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=11</var>
+<status status="PASS" start="2025-06-18T03:35:19.177902" elapsed="0.037268"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.254014" level="INFO">Text: 'Phyllis Martinez'</msg>
+<msg time="2025-06-18T03:35:19.254386" level="INFO">${nome} = Phyllis Martinez</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.216401" elapsed="0.038114"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.255588" level="INFO">Produto: Phyllis Martinez</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.254971" elapsed="0.000749"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.256019" elapsed="0.000512"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=12</var>
+<status status="PASS" start="2025-06-18T03:35:19.215727" elapsed="0.040972"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.292856" level="INFO">Text: 'Tyler Alvarez'</msg>
+<msg time="2025-06-18T03:35:19.293331" level="INFO">${nome} = Tyler Alvarez</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.257507" elapsed="0.035940"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.294706" level="INFO">Produto: Tyler Alvarez</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.293995" elapsed="0.000855"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.295433" elapsed="0.000664"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=13</var>
+<status status="PASS" start="2025-06-18T03:35:19.257127" elapsed="0.039203"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.333840" level="INFO">Text: 'Samsung 60 polegadas'</msg>
+<msg time="2025-06-18T03:35:19.334264" level="INFO">${nome} = Samsung 60 polegadas</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.297145" elapsed="0.037231"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.335543" level="INFO">Produto: Samsung 60 polegadas</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.334883" elapsed="0.000820"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.336150" elapsed="0.000648"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=14</var>
+<status status="PASS" start="2025-06-18T03:35:19.296775" elapsed="0.040243"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.376280" level="INFO">Text: 'James Wong'</msg>
+<msg time="2025-06-18T03:35:19.376674" level="INFO">${nome} = James Wong</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.337965" elapsed="0.038815"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.377922" level="INFO">Produto: James Wong</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.377301" elapsed="0.000789"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.378487" elapsed="0.000638"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=15</var>
+<status status="PASS" start="2025-06-18T03:35:19.337542" elapsed="0.041861"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.414311" level="INFO">Text: 'Daniel Evans'</msg>
+<msg time="2025-06-18T03:35:19.414610" level="INFO">${nome} = Daniel Evans</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.380414" elapsed="0.034272"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.415758" level="INFO">Produto: Daniel Evans</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.415117" elapsed="0.000745"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.416102" elapsed="0.000486"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=16</var>
+<status status="PASS" start="2025-06-18T03:35:19.379927" elapsed="0.036771"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.443853" level="INFO">Text: 'Spencer Morris'</msg>
+<msg time="2025-06-18T03:35:19.444467" level="INFO">${nome} = Spencer Morris</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.417435" elapsed="0.027188"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.445850" level="INFO">Produto: Spencer Morris</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.445159" elapsed="0.000901"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.446490" elapsed="0.000710"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=17</var>
+<status status="PASS" start="2025-06-18T03:35:19.417017" elapsed="0.030377"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.486501" level="INFO">Text: 'Michelle Daniels'</msg>
+<msg time="2025-06-18T03:35:19.486996" level="INFO">${nome} = Michelle Daniels</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.448611" elapsed="0.038520"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.488470" level="INFO">Produto: Michelle Daniels</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.487813" elapsed="0.000825"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.489028" elapsed="0.001048"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=18</var>
+<status status="PASS" start="2025-06-18T03:35:19.447851" elapsed="0.042515"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.529081" level="INFO">Text: 'Nichole Johnson'</msg>
+<msg time="2025-06-18T03:35:19.529588" level="INFO">${nome} = Nichole Johnson</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.491754" elapsed="0.037967"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.531029" level="INFO">Produto: Nichole Johnson</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.530308" elapsed="0.000932"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.531714" elapsed="0.000763"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=19</var>
+<status status="PASS" start="2025-06-18T03:35:19.491002" elapsed="0.041664"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.574422" level="INFO">Text: 'Stephen Garcia'</msg>
+<msg time="2025-06-18T03:35:19.574899" level="INFO">${nome} = Stephen Garcia</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.533686" elapsed="0.041391"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.576955" level="INFO">Produto: Stephen Garcia</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.576111" elapsed="0.001034"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.577629" elapsed="0.000797"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=20</var>
+<status status="PASS" start="2025-06-18T03:35:19.533127" elapsed="0.045482"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.618252" level="INFO">Text: 'Robert Ramos'</msg>
+<msg time="2025-06-18T03:35:19.618678" level="INFO">${nome} = Robert Ramos</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.579599" elapsed="0.039221"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.620354" level="INFO">Produto: Robert Ramos</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.619451" elapsed="0.001142"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.621095" elapsed="0.000834"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=21</var>
+<status status="PASS" start="2025-06-18T03:35:19.579055" elapsed="0.043066"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.648467" level="INFO">Text: 'Deborah Smith'</msg>
+<msg time="2025-06-18T03:35:19.648778" level="INFO">${nome} = Deborah Smith</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.623149" elapsed="0.025705"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.649556" level="INFO">Produto: Deborah Smith</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.649155" elapsed="0.000500"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.649899" elapsed="0.000435"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=22</var>
+<status status="PASS" start="2025-06-18T03:35:19.622625" elapsed="0.027811"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.686922" level="INFO">Text: 'Austin Jackson'</msg>
+<msg time="2025-06-18T03:35:19.687427" level="INFO">${nome} = Austin Jackson</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.650992" elapsed="0.036574"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.688869" level="INFO">Produto: Austin Jackson</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.688144" elapsed="0.000922"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.689550" elapsed="0.000825"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=23</var>
+<status status="PASS" start="2025-06-18T03:35:19.650693" elapsed="0.039884"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.727921" level="INFO">Text: 'Lisa Parker'</msg>
+<msg time="2025-06-18T03:35:19.728620" level="INFO">${nome} = Lisa Parker</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.691910" elapsed="0.036901"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.730416" level="INFO">Produto: Lisa Parker</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.729662" elapsed="0.000951"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.731079" elapsed="0.000908"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=24</var>
+<status status="PASS" start="2025-06-18T03:35:19.691196" elapsed="0.040933"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.764168" level="INFO">Text: 'Jacqueline Guerrero'</msg>
+<msg time="2025-06-18T03:35:19.764597" level="INFO">${nome} = Jacqueline Guerrero</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.733168" elapsed="0.031552"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.766029" level="INFO">Produto: Jacqueline Guerrero</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.765303" elapsed="0.000941"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.766703" elapsed="0.000762"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=25</var>
+<status status="PASS" start="2025-06-18T03:35:19.732562" elapsed="0.035092"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.808387" level="INFO">Text: 'Christopher Hanna'</msg>
+<msg time="2025-06-18T03:35:19.808943" level="INFO">${nome} = Christopher Hanna</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.768658" elapsed="0.040445"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.810672" level="INFO">Produto: Christopher Hanna</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.809814" elapsed="0.001077"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.811429" elapsed="0.000870"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=26</var>
+<status status="PASS" start="2025-06-18T03:35:19.768101" elapsed="0.044411"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.854696" level="INFO">Text: 'Lindsey Kennedy'</msg>
+<msg time="2025-06-18T03:35:19.855121" level="INFO">${nome} = Lindsey Kennedy</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.813536" elapsed="0.041740"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.856491" level="INFO">Produto: Lindsey Kennedy</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.855814" elapsed="0.000852"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.857066" elapsed="0.000703"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=27</var>
+<status status="PASS" start="2025-06-18T03:35:19.812969" elapsed="0.044969"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.894721" level="INFO">Text: 'Kimberly Brown'</msg>
+<msg time="2025-06-18T03:35:19.895465" level="INFO">${nome} = Kimberly Brown</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.858859" elapsed="0.036799"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.897070" level="INFO">Produto: Kimberly Brown</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.896346" elapsed="0.000939"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.897712" elapsed="0.000753"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=28</var>
+<status status="PASS" start="2025-06-18T03:35:19.858381" elapsed="0.040290"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.938177" level="INFO">Text: 'Alexis Hill'</msg>
+<msg time="2025-06-18T03:35:19.938679" level="INFO">${nome} = Alexis Hill</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.899644" elapsed="0.039163"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.940079" level="INFO">Produto: Alexis Hill</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.939399" elapsed="0.000902"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.940716" elapsed="0.000728"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=29</var>
+<status status="PASS" start="2025-06-18T03:35:19.899098" elapsed="0.042523"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:19.978662" level="INFO">Text: 'Alicia Wong MD'</msg>
+<msg time="2025-06-18T03:35:19.979128" level="INFO">${nome} = Alicia Wong MD</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.942630" elapsed="0.036712"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:19.980711" level="INFO">Produto: Alicia Wong MD</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.979939" elapsed="0.000960"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.981374" elapsed="0.000765"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=30</var>
+<status status="PASS" start="2025-06-18T03:35:19.942093" elapsed="0.040277"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:20.020421" level="INFO">Text: 'Daniel Solis'</msg>
+<msg time="2025-06-18T03:35:20.020939" level="INFO">${nome} = Daniel Solis</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:19.983437" elapsed="0.037708"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:20.023305" level="INFO">Produto: Daniel Solis</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.022238" elapsed="0.001378"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.024266" elapsed="0.000922"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=31</var>
+<status status="PASS" start="2025-06-18T03:35:19.982845" elapsed="0.042579"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:20.059430" level="INFO">Text: 'Kenneth Bowers'</msg>
+<msg time="2025-06-18T03:35:20.059694" level="INFO">${nome} = Kenneth Bowers</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.026459" elapsed="0.033312"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:20.060561" level="INFO">Produto: Kenneth Bowers</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.060112" elapsed="0.000558"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.060938" elapsed="0.000453"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=32</var>
+<status status="PASS" start="2025-06-18T03:35:20.025891" elapsed="0.035605"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:20.091829" level="INFO">Text: 'standard'</msg>
+<msg time="2025-06-18T03:35:20.092461" level="INFO">${nome} = standard</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.062055" elapsed="0.030597"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:20.094368" level="INFO">Produto: standard</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.093613" elapsed="0.000945"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.095008" elapsed="0.000828"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=33</var>
+<status status="PASS" start="2025-06-18T03:35:20.061756" elapsed="0.034360"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:20.134692" level="INFO">Text: 'Kyle Patterson'</msg>
+<msg time="2025-06-18T03:35:20.135170" level="INFO">${nome} = Kyle Patterson</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.097288" elapsed="0.038052"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:20.136773" level="INFO">Produto: Kyle Patterson</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.135910" elapsed="0.001068"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.137565" elapsed="0.000887"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=34</var>
+<status status="PASS" start="2025-06-18T03:35:20.096706" elapsed="0.042053"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:20.180949" level="INFO">Text: 'Eric Ramos'</msg>
+<msg time="2025-06-18T03:35:20.181388" level="INFO">${nome} = Eric Ramos</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.139915" elapsed="0.041593"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:20.182747" level="INFO">Produto: Eric Ramos</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.182047" elapsed="0.000873"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.183393" elapsed="0.000702"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=35</var>
+<status status="PASS" start="2025-06-18T03:35:20.139337" elapsed="0.044981"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:20.224348" level="INFO">Text: 'Danielle Collins'</msg>
+<msg time="2025-06-18T03:35:20.224794" level="INFO">${nome} = Danielle Collins</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.185313" elapsed="0.039613"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:20.226298" level="INFO">Produto: Danielle Collins</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.225531" elapsed="0.000976"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.226974" elapsed="0.000815"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=36</var>
+<status status="PASS" start="2025-06-18T03:35:20.184781" elapsed="0.043203"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:20.266103" level="INFO">Text: 'Richard Scott'</msg>
+<msg time="2025-06-18T03:35:20.266715" level="INFO">${nome} = Richard Scott</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.229026" elapsed="0.037844"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:20.268821" level="INFO">Produto: Richard Scott</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.267722" elapsed="0.001394"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.269801" elapsed="0.001178"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=37</var>
+<status status="PASS" start="2025-06-18T03:35:20.228473" elapsed="0.042846"/>
+</iter>
+<iter>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:20.311394" level="INFO">Text: 'Jeffrey Gomez'</msg>
+<msg time="2025-06-18T03:35:20.311772" level="INFO">${nome} = Jeffrey Gomez</msg>
+<var>${nome}</var>
+<arg>${produto}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.272399" elapsed="0.039473"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:20.312986" level="INFO">Produto: Jeffrey Gomez</msg>
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.312387" elapsed="0.000913"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Produto: ${nome}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.313678" elapsed="0.000656"/>
+</kw>
+<var name="${produto}">xpath=//table[contains(@class,'table-striped')]//tbody//tr/td[1] &gt;&gt; nth=38</var>
+<status status="PASS" start="2025-06-18T03:35:20.271802" elapsed="0.042689"/>
+</iter>
+<var>${produto}</var>
+<value>@{produtos}</value>
+<status status="PASS" start="2025-06-18T03:35:18.750900" elapsed="1.563775"/>
+</for>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-06-18T03:35:20.315818" level="INFO">Length is 39.</msg>
+<arg>${produtos}</arg>
+<arg>Nenhum produto foi listado na página.</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.315188" elapsed="0.000825"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-06-18T03:35:20.487978" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.316782" elapsed="0.171394"/>
+</kw>
+<msg time="2025-06-18T03:35:20.516941" level="INFO">Switching context to context=078d01a7-8c62-4c76-b17b-27d9d00e702a in CURRENT</msg>
+<msg time="2025-06-18T03:35:20.532790" level="INFO">Successfully changed active context: context=078d01a7-8c62-4c76-b17b-27d9d00e702a</msg>
+<msg time="2025-06-18T03:35:20.580742" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-06-18T03:35:10.532246" elapsed="9.956125"/>
+</test>
+<test id="s1-s1-t3" name="Product excluded" line="78">
+<kw name="Start Session" owner="base" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-06-18T03:35:20.592222" level="INFO">Switching browser to browser=551ef8a0-46e1-4af6-ac42-fa31ad1db420</msg>
+<msg time="2025-06-18T03:35:20.596153" level="INFO">Successfully changed active browser: browser=551ef8a0-46e1-4af6-ac42-fa31ad1db420</msg>
+<msg time="2025-06-18T03:35:20.596418" level="INFO">Reusing existing browser with id: browser=551ef8a0-46e1-4af6-ac42-fa31ad1db420</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${False}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.590790" elapsed="0.005761"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-06-18T03:35:22.935298" level="INFO">Successfully initialized new page object and opened url: https://compassuolfront.serverest.dev</msg>
+<msg time="2025-06-18T03:35:22.935519" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>${BASE_URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-06-18T03:35:20.596909" elapsed="2.339054"/>
+</kw>
+<status status="PASS" start="2025-06-18T03:35:20.588978" elapsed="2.347375"/>
+</kw>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:22.938176" level="INFO">${name} = Daniel Mills</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2025-06-18T03:35:22.936967" elapsed="0.001347"/>
+</kw>
+<kw name="Free Email" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:22.939976" level="INFO">${email} = ncook@gmail.com</msg>
+<var>${email}</var>
+<status status="PASS" start="2025-06-18T03:35:22.938975" elapsed="0.001109"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-18T03:35:22.941198" level="INFO">${password} = pwd123</msg>
+<var>${password}</var>
+<arg>pwd123</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-18T03:35:22.940623" elapsed="0.000712"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-18T03:35:22.943853" level="INFO">&amp;{user} = { nome=Daniel Mills | email=ncook@gmail.com | password=pwd123 }</msg>
+<var>&amp;{user}</var>
+<arg>nome=${name}</arg>
+<arg>email=${email}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-18T03:35:22.942081" elapsed="0.001890"/>
+</kw>
+<kw name="Go to signup Page" owner="SignupPage">
+<kw name="Go To" owner="Browser">
+<msg time="2025-06-18T03:35:24.456935" level="INFO">Successfully opened URL https://compassuolfront.serverest.dev/cadastrarusuarios</msg>
+<arg>${BASE_URL}/cadastrarusuarios</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-06-18T03:35:22.945766" elapsed="1.511531"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-06-18T03:35:24.566120" level="INFO">Waited for Element with selector xpath=//h2 at state visible</msg>
+<arg>xpath=//h2</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-06-18T03:35:24.457689" elapsed="0.108783"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:24.621099" level="INFO">Text: 'Cadastro'</msg>
+<arg>xpath=//h2</arg>
+<arg>equal</arg>
+<arg>Cadastro</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:24.566754" elapsed="0.054691"/>
+</kw>
+<status status="PASS" start="2025-06-18T03:35:22.944819" elapsed="1.676967"/>
+</kw>
+<kw name="Submit signup form as administrator" owner="SignupPage">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:24.625116" level="INFO">Fills the text 'Daniel Mills' in the given field.</msg>
+<arg>css=input[data-testid=nome]</arg>
+<arg>${user}[nome]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:24.623762" elapsed="0.041287"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:24.666495" level="INFO">Fills the text 'ncook@gmail.com' in the given field.</msg>
+<arg>css=input[data-testid=email]</arg>
+<arg>${user}[email]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:24.665482" elapsed="0.026929"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:24.693563" level="INFO">Fills the text 'pwd123' in the given field.</msg>
+<arg>css=input[data-testid=password]</arg>
+<arg>${user}[password]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:24.692706" elapsed="0.015406"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-18T03:35:24.709344" level="INFO">Clicks the element 'css=input[data-testid=checkbox]'.</msg>
+<arg>css=input[data-testid=checkbox]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:24.708480" elapsed="0.043225"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-18T03:35:24.753205" level="INFO">Clicks the element 'css=button[data-testid=cadastrar]'.</msg>
+<arg>css=button[data-testid=cadastrar]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:24.752187" elapsed="0.060864"/>
+</kw>
+<arg>&amp;{user}</arg>
+<status status="PASS" start="2025-06-18T03:35:24.622506" elapsed="0.190752"/>
+</kw>
+<kw name="Administrator should be logged in" owner="Header">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-18T03:35:24.814745" level="INFO">${element} = css=.jumbotron h1</msg>
+<var>${element}</var>
+<arg>css=.jumbotron h1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-18T03:35:24.814448" elapsed="0.000350"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-06-18T03:35:28.664578" level="INFO">Waited for Element with selector css=.jumbotron h1 at state visible</msg>
+<arg>${element}</arg>
+<arg>visible</arg>
+<arg>5</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-06-18T03:35:24.814999" elapsed="3.850025"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:28.696201" level="INFO">Text: 'Bem Vindo Daniel Mills'</msg>
+<arg>${element}</arg>
+<arg>equal</arg>
+<arg>Bem Vindo ${name}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:28.665607" elapsed="0.030804"/>
+</kw>
+<arg>${user}[nome]</arg>
+<status status="PASS" start="2025-06-18T03:35:24.813794" elapsed="3.882817"/>
+</kw>
+<kw name="Go to products Page" owner="ProductPage">
+<kw name="Go To" owner="Browser">
+<msg time="2025-06-18T03:35:29.927264" level="INFO">Successfully opened URL https://compassuolfront.serverest.dev/admin/cadastrarprodutos</msg>
+<arg>${BASE_URL}/admin/cadastrarprodutos</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2025-06-18T03:35:28.697588" elapsed="1.229960"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-06-18T03:35:30.024178" level="INFO">Waited for Element with selector xpath=//h1[contains(text(), 'Cadastro de Produtos')] at state visible</msg>
+<arg>xpath=//h1[contains(text(), 'Cadastro de Produtos')]</arg>
+<arg>visible</arg>
+<arg>10</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-06-18T03:35:29.927940" elapsed="0.096745"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:30.084743" level="INFO">Text: 'Cadastro de Produtos'</msg>
+<arg>xpath=//h1[contains(text(), 'Cadastro de Produtos')]</arg>
+<arg>equal</arg>
+<arg>Cadastro de Produtos</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:30.025241" elapsed="0.060014"/>
+</kw>
+<status status="PASS" start="2025-06-18T03:35:28.697018" elapsed="1.388657"/>
+</kw>
+<kw name="Word" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:30.087522" level="INFO">${name_product} = worker</msg>
+<var>${name_product}</var>
+<doc>Generate a word.</doc>
+<status status="PASS" start="2025-06-18T03:35:30.086630" elapsed="0.001004"/>
+</kw>
+<kw name="Random Number" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:30.089035" level="INFO">${price} = 2</msg>
+<var>${price}</var>
+<arg>1</arg>
+<arg>1000</arg>
+<doc>Generate a random integer according to the following rules:</doc>
+<status status="PASS" start="2025-06-18T03:35:30.088107" elapsed="0.001038"/>
+</kw>
+<kw name="Sentence" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:30.090585" level="INFO">${description} = Positive study political begin myself they.</msg>
+<var>${description}</var>
+<doc>Generate a sentence.</doc>
+<status status="PASS" start="2025-06-18T03:35:30.089713" elapsed="0.000981"/>
+</kw>
+<kw name="Random Number" owner="FakerLibrary">
+<msg time="2025-06-18T03:35:30.091952" level="INFO">${quantity} = 9</msg>
+<var>${quantity}</var>
+<arg>1</arg>
+<arg>100</arg>
+<doc>Generate a random integer according to the following rules:</doc>
+<status status="PASS" start="2025-06-18T03:35:30.091152" elapsed="0.000903"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-06-18T03:35:30.094019" level="INFO">${product} = {'nome': 'worker', 'preco': 2, 'descricao': 'Positive study political begin myself they.', 'quantidade': 9}</msg>
+<var>${product}</var>
+<arg>nome=${name_product}</arg>
+<arg>preco=${price}</arg>
+<arg>descricao=${description}</arg>
+<arg>quantidade=${quantity}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-06-18T03:35:30.092641" elapsed="0.001554"/>
+</kw>
+<kw name="Submit products form" owner="ProductPage">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:30.097683" level="INFO">Fills the text 'worker' in the given field.</msg>
+<arg>css=input[name="nome"]</arg>
+<arg>${product}[nome]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:30.096235" elapsed="0.043916"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:30.141874" level="INFO">Fills the text '2' in the given field.</msg>
+<arg>css=input[name="price"]</arg>
+<arg>${product}[preco]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:30.140845" elapsed="0.025008"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:30.167060" level="INFO">Fills the text 'Positive study political begin myself they.' in the given field.</msg>
+<arg>css=#description</arg>
+<arg>${product}[descricao]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:30.166221" elapsed="0.021076"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-06-18T03:35:30.188382" level="INFO">Fills the text '9' in the given field.</msg>
+<arg>css=#quantity</arg>
+<arg>${product}[quantidade]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:30.187588" elapsed="0.016538"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-18T03:35:30.205022" level="INFO">Clicks the element 'xpath=//button[text()='Cadastrar']'.</msg>
+<arg>xpath=//button[text()='Cadastrar']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:30.204419" elapsed="0.064579"/>
+</kw>
+<arg>&amp;{product}</arg>
+<status status="PASS" start="2025-06-18T03:35:30.094907" elapsed="0.174332"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-06-18T03:35:35.270392" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-06-18T03:35:30.269685" elapsed="5.001021"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-06-18T03:35:35.272503" level="INFO">${product_name} = worker</msg>
+<var>${product_name}</var>
+<arg>${product}[nome]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-06-18T03:35:35.271505" elapsed="0.001112"/>
+</kw>
+<kw name="Product should be listed" owner="ProductPage">
+<kw name="Get Text" owner="Browser">
+<msg time="2025-06-18T03:35:35.315660" level="INFO">Text: 'worker'</msg>
+<arg>xpath=//table[contains(@class,'table-striped')]//td[normalize-space(text())="${product_name}"]</arg>
+<arg>==</arg>
+<arg>${product_name}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:35.274402" elapsed="0.041743"/>
+</kw>
+<arg>${product_name}</arg>
+<status status="PASS" start="2025-06-18T03:35:35.273356" elapsed="0.043335"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-06-18T03:35:35.320095" level="INFO">Clicks the element 'xpath=//td[normalize-space(text())="worker"]/following-sibling::td//button[contains(@class, 'btn-danger')]'.</msg>
+<arg>xpath=//td[normalize-space(text())="${product_name}"]/following-sibling::td//button[contains(@class, 'btn-danger')]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-06-18T03:35:35.317662" elapsed="0.061096"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-18T03:35:35.380368" level="INFO">Excluindo o produto: worker</msg>
+<arg>Excluindo o produto: ${product_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-18T03:35:35.379581" elapsed="0.000983"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-06-18T03:35:35.581679" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-06-18T03:35:35.381492" elapsed="0.200471"/>
+</kw>
+<msg time="2025-06-18T03:35:35.620309" level="INFO">Switching context to context=6b232a41-d666-4a83-9939-2334484518a3 in CURRENT</msg>
+<msg time="2025-06-18T03:35:35.641656" level="INFO">Successfully changed active context: context=6b232a41-d666-4a83-9939-2334484518a3</msg>
+<msg time="2025-06-18T03:35:35.699545" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-06-18T03:35:20.582009" elapsed="15.000186"/>
+</test>
+<doc>Elementos e ações na pagina de produtos</doc>
+<status status="PASS" start="2025-06-18T03:34:51.678358" elapsed="44.022556"/>
+</suite>
+<status status="PASS" start="2025-06-18T03:34:51.649731" elapsed="44.062839"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Products" id="s1" pass="3" fail="0" skip="0">Products</stat>
+<stat name="Products" id="s1-s1" pass="3" fail="0" skip="0">Products.Products</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
