@@ -1,0 +1,19 @@
+{
+    "create": {
+        "user":{
+            "nome": "Steve Jobs",
+            "email": "jobs@apple.com",
+            "password": "pwd123"
+        },
+        "normal_user":{
+            "nome": "Steve Wozniak",
+            "email": "steve@apple.com",
+            "password": "pwd123"
+        },
+        "admin_to_delete_other_users":{
+            "nome": "Bill Gates",
+            "email": "gates@microsoft.com",
+            "password": "pwd123"
+        }
+    }
+}
