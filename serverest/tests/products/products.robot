@@ -10,7 +10,7 @@ Test Teardown        Take Screenshot
 
 *** Test Cases ***
 Registering a new product
-    [Tags]    Product
+    [Tags]          POST    Product    Positivo
     
     ${name}         FakerLibrary.Name
     ${email}        FakerLibrary.Free Email
@@ -42,12 +42,8 @@ Registering a new product
 
     ${product_name}=    Set Variable    ${product}[nome]
     Product should be listed    ${product_name}
-
-
-
-
-
 Listing products on the products page
+    [Tags]          GET    Product    Positivo
 
     ${name}         FakerLibrary.Name
     ${email}        FakerLibrary.Free Email
@@ -74,7 +70,7 @@ Listing products on the products page
     Should Not Be Empty    ${produtos}    Nenhum produto foi listado na página.
 
 Product excluded
-
+    [Tags]          DELETE    Product    Positivo
     ${name}         FakerLibrary.Name
     ${email}        FakerLibrary.Free Email
     ${password}     Set Variable        pwd123

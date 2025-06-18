@@ -8,6 +8,7 @@ Test Teardown    Take Screenshot
 
 *** Test Cases ***
 Should signup a new administrator
+    [Tags]       POST    User    Positivo
     ${data}=     Get fixture    user    create
     ${user}=     Get From Dictionary    ${data}    user
     ${user2}=    Get From Dictionary    ${data}    admin_to_delete_other_users
@@ -17,6 +18,7 @@ Should signup a new administrator
     Signup as Administrator    ${user}    
 
 Should signup a new user
+    [Tags]       POST    User    Positivo
     ${data}=     Get fixture    user    create
     ${user}=     Get From Dictionary    ${data}    normal_user
     ${email}=    Get From Dictionary    ${user}    email
