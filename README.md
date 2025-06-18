@@ -21,6 +21,9 @@ Automatizar casos de teste utilizando Robot Framework, aplicando boas práticas 
 
 ## Estrutura
 
+## 📁 Estrutura de Pastas
+
+```plaintext
 ├── log/                   # Relatórios de execução
 │   ├── log.html
 │   ├── output.xml
@@ -31,7 +34,7 @@ Automatizar casos de teste utilizando Robot Framework, aplicando boas práticas 
 │   └── browser/screenshot/     # Screenshots dos testes
 │
 ├── resources/             # Arquivos de recursos
-│   ├── fixtures/          # Massa de dados (ex.: user.json)
+│   ├── fixtures/          # Massa de dados
 │   └── pages/             # Page Objects (POM)
 │       └── components/    # Componentes reutilizáveis
 │
@@ -39,5 +42,4 @@ Automatizar casos de teste utilizando Robot Framework, aplicando boas práticas 
 │   ├── products/
 │   ├── shoppingList/
 │   └── users/
-
 
