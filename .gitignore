@@ -1,0 +1,22 @@
+# Ignore virtual environments
+venv/
+.env/
+
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# VSCode
+.vscode/
+
+# Pytest cache
+.pytest_cache/
+
+# Logs
+*.log
+
+
+
+# Environment variables files
+.env
