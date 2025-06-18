@@ -4,7 +4,11 @@ Resource   pages/components/Header.resource
 Resource   pages/SignupPage.resource
 Resource   pages/UserListPage.resource
 Resource   pages/LoginPage.resource
-Resource    pages/components/Header.resource
+Resource   pages/components/Header.resource
+Resource   pages/ProductPage.resource
+Resource    pages/ListPage.resource
+
+Resource   ../resources/pages/components/Header.resource
 
 Library    JSONLibrary
 Library    Browser
@@ -28,7 +32,7 @@ Delete user if exists
 Signup as Administrator
     [Arguments]    ${user}
     Go to signup Page
-    Submit signup form as administrator    ${user}
+    Submit signup form as administrator   ${user}
     Administrator should be logged in    ${user['nome']}
 
 Signup as User
